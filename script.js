@@ -47,13 +47,13 @@ function playGame (rounds) {
         }
     }
     if (playerScore > computerScore) {
-        console.log(`You're the Winner! You won ${playerScore} games, and lost ${computerScore}!`);
+        return `You're the Winner! You won ${playerScore} games, and lost ${computerScore}!`;
     }
     else if (playerScore < computerScore) {
-        console.log(`Sorry, you lost. You lost ${computerScore} games, and won ${playerScore}.`);
+        return `Sorry, you lost. You lost ${computerScore} games, and won ${playerScore}.`;
     }
     else
-        console.log(`Tie! You both won ${playerScore} games!`);
+        return `Tie! You both won ${playerScore} games!`;
 }
 
 console.log(playGame(5));
