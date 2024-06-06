@@ -55,5 +55,3 @@ function playGame (rounds) {
     else
         return `Tie! You both won ${playerScore} games!`;
 }
-
-console.log(playGame(5));
