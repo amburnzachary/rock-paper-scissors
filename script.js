@@ -1,5 +1,7 @@
 let menu = document.querySelector("#menu");
 let roundResult = document.querySelector("#roundResult");
+let pScore = document.querySelector("#pScore");
+let cScore = document.querySelector("#cScore");
 menu.addEventListener("click", (event) => {
     let target = event.target;
     switch(target.id) {
