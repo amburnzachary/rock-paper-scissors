@@ -5,18 +5,21 @@ let cScore = document.querySelector("#cScore");
 let pScoreCount = 0, cScoreCount = 0;
 
 menu.addEventListener("click", (event) => {
+    let result;
     let target = event.target;
     switch(target.id) {
         case "rock":
-            roundResult.textContent = playRound("ROCK", getComputerChoice());
+            result = playRound("ROCK", getComputerChoice());
             break;
         case "paper":
-            roundResult.textContent = playRound("PAPER", getComputerChoice());
+            result = playRound("PAPER", getComputerChoice());
             break;
         case "scissors":
-            roundResult.textContent = playRound("SCISSORS", getComputerChoice());
+            result = playRound("SCISSORS", getComputerChoice());
             break;
     }
+    roundResult.textContent = result;
+    calcScore(result);
 });
 
 function getComputerChoice () {
