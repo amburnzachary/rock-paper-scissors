@@ -1,7 +1,8 @@
-let menu = document.querySelector("#menu");
-let roundResult = document.querySelector("#roundResult");
-let pScore = document.querySelector("#pScore");
-let cScore = document.querySelector("#cScore");
+const menu = document.querySelector("#menu");
+const roundResult = document.querySelector("#roundResult");
+const pScore = document.querySelector("#pScore");
+const cScore = document.querySelector("#cScore");
+const winner = document.querySelector("#winner");
 let pScoreCount = 0, cScoreCount = 0;
 
 menu.addEventListener("click", (event) => {
@@ -20,6 +21,10 @@ menu.addEventListener("click", (event) => {
     }
     roundResult.textContent = result;
     calcScore(result);
+    if (pScoreCount == 5)
+        winner.textContent = "Player Wins!";
+    else if (cScoreCount == 5)
+        winner.textContent = "Computer Wins!";
 });
 
 function getComputerChoice () {
