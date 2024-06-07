@@ -56,35 +56,6 @@ function playRound (playerSelection, computerSelection) {
         return "Invalid";
 }
 
-function playGame (rounds) {
-    let playerScore = 0;
-    let computerScore = 0;
-    for (i = 0; i < rounds; ++i) {
-        let playerSelection = prompt("Rock, Paper, or Scissors: ");
-        let computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
-        if (result.charAt(4) == "W") {
-            playerScore++;
-            console.log(result);
-        }
-        else if (result.charAt(4) == "L") {
-            computerScore++;
-            console.log(result);
-        }
-        else {
-            console.log(result);
-        }
-    }
-    if (playerScore > computerScore) {
-        return `You're the Winner! You won ${playerScore} games, and lost ${computerScore}!`;
-    }
-    else if (playerScore < computerScore) {
-        return `Sorry, you lost. You lost ${computerScore} games, and won ${playerScore}.`;
-    }
-    else
-        return `Tie! You both won ${playerScore} games!`;
-}
-
 function calcScore (result) {
     if (result === undefined)
         return;
