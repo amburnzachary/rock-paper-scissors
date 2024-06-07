@@ -2,6 +2,8 @@ let menu = document.querySelector("#menu");
 let roundResult = document.querySelector("#roundResult");
 let pScore = document.querySelector("#pScore");
 let cScore = document.querySelector("#cScore");
+let pScoreCount = 0, cScoreCount = 0;
+
 menu.addEventListener("click", (event) => {
     let target = event.target;
     switch(target.id) {
@@ -73,4 +75,15 @@ function playGame (rounds) {
     }
     else
         return `Tie! You both won ${playerScore} games!`;
+}
+
+function calcScore (result) {
+    if (result.charAt(4) == "W") {
+        pScoreCount++;
+        pScore.textContent = pScoreCount;
+    }
+    else if (result.charAt(4) == "L") {
+        cScoreCount++;
+        cScore.textContent = cScoreCount;
+    }
 }
