@@ -86,7 +86,9 @@ function playGame (rounds) {
 }
 
 function calcScore (result) {
-    if (result.charAt(4) == "W") {
+    if (result === undefined)
+        return;
+    else if (result.charAt(4) == "W") {
         pScoreCount++;
         pScore.textContent = pScoreCount;
     }
