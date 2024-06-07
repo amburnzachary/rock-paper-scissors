@@ -1,16 +1,16 @@
 let menu = document.querySelector("#menu");
-
+let roundResult = document.querySelector("#roundResult");
 menu.addEventListener("click", (event) => {
     let target = event.target;
     switch(target.id) {
         case "rock":
-            console.log(playRound("ROCK", getComputerChoice()));
+            roundResult.textContent = playRound("ROCK", getComputerChoice());
             break;
         case "paper":
-            console.log(playRound("PAPER", getComputerChoice()));
+            roundResult.textContent = playRound("PAPER", getComputerChoice());
             break;
         case "scissors":
-            console.log(playRound("SCISSORS", getComputerChoice()));
+            roundResult.textContent = playRound("SCISSORS", getComputerChoice());
             break;
     }
 });
