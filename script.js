@@ -1,3 +1,20 @@
+let menu = document.querySelector("#menu");
+
+menu.addEventListener("click", (event) => {
+    let target = event.target;
+    switch(target.id) {
+        case "rock":
+            console.log(playRound("ROCK", getComputerChoice()));
+            break;
+        case "paper":
+            console.log(playRound("PAPER", getComputerChoice()));
+            break;
+        case "scissors":
+            console.log(playRound("SCISSORS", getComputerChoice()));
+            break;
+    }
+});
+
 function getComputerChoice () {
     let choice = Math.floor(Math.random() * 3);
     if (choice == 0)
